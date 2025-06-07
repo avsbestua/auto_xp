@@ -1,7 +1,9 @@
 import easyocr, time, keyboard
 from PIL import ImageGrab
 import pyautogui as pg
+from pynput.mouse import Button, Controller
 
+m = Controller()
 time.sleep(1)
 reader = easyocr.Reader(['en'])
 
@@ -27,11 +29,15 @@ while True:
 
             time.sleep(1)
 
-            pg.click(1032, 374)
+            m.position = 1032, 374
+            m.click(Button.left)
+            #pg.click(1032, 374)
 
             time.sleep(1.2)
 
-            pg.click(962, 302)
+            m.position = 962, 302
+            m.click(Button.left)
+            #pg.click(962, 302)
 
             time.sleep(0.5)
 
