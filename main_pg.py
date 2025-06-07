@@ -18,18 +18,22 @@ while True:
             continue
 
         if text >= 15:
+            curent_xp = text
 
+            if curent_xp == text:
+                time.sleep(5)
+            
             keyboard.press_and_release('m')
 
-            time.sleep(0.8)
+            time.sleep(1)
 
             pg.click(1032, 374)
 
-            time.sleep(0.9)
+            time.sleep(1)
 
             pg.click(962, 302)
 
-            time.sleep(0.7)
+            time.sleep(0.5)
 
             keyboard.press_and_release('esc')
 
