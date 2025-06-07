@@ -56,7 +56,7 @@ def on_press(key):
     except AttributeError:
         logging.info(key)
 
-def on_click(x, y, button, presed):
+def on_click(x, y, button, pressed):
     logging.info(f"Pressed {button}")
 
 threading.Thread(target=main, daemon=True).start()
@@ -64,5 +64,7 @@ threading.Thread(target=main, daemon=True).start()
 listener = kb.Listener(on_press=on_press)
 listener.start()
 
-mouse_listener =Listener(щn_click=on_click)
+mouse_listener = Listener(on_click=on_click)
 mouse_listener.start()
+
+listener.join()
