@@ -28,12 +28,12 @@ while True:
 
             time.sleep(0.8)
 
-            ms.position = (1032, 372)
+            ms.position = (1032, 374)
             ms.click(Button.left)
 
             time.sleep(0.8)
 
-            ms.position = (960, 310)
+            ms.position = (962, 302)
             ms.click(Button.left)
 
             time.sleep(0.7)
