@@ -2,3 +2,4 @@ easyocr
 pillow
 pynput
 pyautogui
+pywin32
