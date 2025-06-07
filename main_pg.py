@@ -1,9 +1,7 @@
-import easyocr, time
+import easyocr, time, keyboard
 from PIL import ImageGrab
-from pynput.keyboard import Controller as KeyboardController, Key
 import pyautogui as pg
 
-kb = KeyboardController()
 time.sleep(1)
 reader = easyocr.Reader(['en'])
 
@@ -21,20 +19,18 @@ while True:
 
         if text >= 15:
 
-            kb.press('m')
-            kb.release('m')
+            keyboard.press_and_release('m')
 
             time.sleep(0.8)
 
             pg.click(1032, 374)
 
-            time.sleep(0.8)
+            time.sleep(0.9)
 
             pg.click(962, 302)
 
             time.sleep(0.7)
 
-            kb.press(Key.esc)
-            kb.release(Key.esc)
+            keyboard.press_and_release('esc')
 
             time.sleep(0.2)
