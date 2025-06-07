@@ -2,8 +2,8 @@ import easyocr, time, keyboard, threading, logging, win32api, win32con
 from PIL import ImageGrab
 from pynput.mouse import Button, Controller, Listener
 from pynput import keyboard as kb
+import pyautogui as pg
 
-m = Controller()
 time.sleep(1)
 reader = easyocr.Reader(['en'])
 
@@ -33,7 +33,7 @@ def main():
 
                 time.sleep(1)
 
-                win32api.SetCursorPos((1032, 374))
+                pg.moveTo(1032, 374)
 
                 win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
                 time.sleep(0.05)  # коротка пауза
@@ -43,7 +43,7 @@ def main():
 
                 time.sleep(1.2)
 
-                win32api.SetCursorPos((962, 302))
+                pg.moveTo(962, 302)
 
                 win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
                 time.sleep(0.05)  # коротка пауза
