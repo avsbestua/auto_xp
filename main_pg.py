@@ -19,12 +19,8 @@ while True:
         except ValueError:
             continue
 
-        if text >= 15:
+        if text >= 16:
 
-            if curent_xp == text:
-                time.sleep(2)
-
-            curent_xp = text
             keyboard.press_and_release('m')
 
             time.sleep(1)
