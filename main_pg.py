@@ -35,13 +35,13 @@ def main():
                 time.sleep(1)
 
                 m.position = 1032, 374
-                m.click(Button.left)
+                m.click(Button.right)
                 #pg.click(1032, 374)
 
                 time.sleep(1.2)
 
                 m.position = 962, 302
-                m.click(Button.left)
+                m.click(Button.right)
                 #pg.click(962, 302)
 
                 time.sleep(0.5)
