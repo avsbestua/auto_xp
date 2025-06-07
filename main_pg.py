@@ -1,7 +1,7 @@
 import easyocr, time, keyboard, threading, logging
 from PIL import ImageGrab
 import pyautogui as pg
-from pynput.mouse import Button, Controller
+from pynput.mouse import Button, Controller, Listener
 from pynput import keyboard as kb
 
 m = Controller()
@@ -56,7 +56,13 @@ def on_press(key):
     except AttributeError:
         logging.info(key)
 
+def on_click(x, y, button, presed):
+    logging.info(f"Pressed {button}")
+
 threading.Thread(target=main, daemon=True).start()
 
 listener = kb.Listener(on_press=on_press)
 listener.start()
+
+mouse_listener =Listener(щn_click=on_click)
+mouse_listener.start()
