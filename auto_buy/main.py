@@ -19,6 +19,7 @@ def price(image):
 ah_update = lambda: pg.click(959,579)
 
 k = Controller()
+pg.FAILSAFE = True
 target_price = 1500000
 pytesseract.pytesseract.tesseract_cmd = r'D:\download\teseract\tesseract.exe'
 #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -32,7 +33,7 @@ while True:
     try:
         location = pg.locateOnScreen("yayko.png", region=(636, 139, 1287, 517), confidence=0.85)
         yayko_pos = pg.center(location)
-        pg.moveTo()
+        pg.moveTo(yayko_pos)
         x,y = pg.position()
 
         y1 = y + 80
@@ -47,7 +48,7 @@ while True:
         img.save("ah.png")
 
         if price("ah.png") <= target_price:
-            k.press(Key.shift_l)
+            k.press(Key.shift)
             pg.click(yayko_pos)
             break
 
