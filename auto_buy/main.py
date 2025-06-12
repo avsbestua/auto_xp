@@ -1,3 +1,4 @@
+import keyboard
 import pyautogui as pg
 from pynput.keyboard import Controller, Key
 import pytesseract, time
@@ -21,8 +22,8 @@ ah_update = lambda: pg.click(959,579)
 k = Controller()
 pg.FAILSAFE = True
 target_price = 1500000
-pytesseract.pytesseract.tesseract_cmd = r'D:\download\teseract\tesseract.exe'
-#pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+#pytesseract.pytesseract.tesseract_cmd = r'D:\download\teseract\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 time.sleep(3)
 
@@ -48,7 +49,8 @@ while True:
         img.save("ah.png")
 
         if price("ah.png") <= target_price:
-            k.press(Key.shift)
+            #k.press(Key.shift)
+            keyboard.press('shift')
             pg.click(yayko_pos)
             break
 
