@@ -35,11 +35,10 @@ while True:
         location = pg.locateOnScreen("yayko.png", region=(636, 139, 1287, 517), confidence=0.85)
     except:
         ah_update()
-
-    if not location:
         continue
 
     yayko_pos = pg.center(location)
+    print("find")
     pg.moveTo(yayko_pos)
     x,y = pg.position()
 
@@ -53,7 +52,10 @@ while True:
 
     img = ImageGrab.grab(bbox=bbox)
 
-    if price(img) <= target_price:
+    price = price(img)
+    print(price)
+
+    if price <= target_price:
         #k.press(Key.shift)
         keyboard.press('shift')
         pg.click(yayko_pos)
