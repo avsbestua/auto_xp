@@ -42,13 +42,10 @@ while True:
     pg.moveTo(yayko_pos)
     x,y = pg.position()
 
-    y1 = y + 80
-    x1 = x
+    x2 = x + 600
+    y2 = y + 350
 
-    x2 = x + 654
-    y2 = y - 80
-
-    bbox = (x1, y1, x2, y2)
+    bbox = (x, y-120, x2, y2)
 
     img = ImageGrab.grab(bbox=bbox)
 
