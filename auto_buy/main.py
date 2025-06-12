@@ -33,24 +33,28 @@ k.release(']')
 while True:
     try:
         location = pg.locateOnScreen("yayko.png", region=(636, 139, 1287, 517), confidence=0.85)
-        yayko_pos = pg.center(location)
-        pg.moveTo(yayko_pos)
-        x,y = pg.position()
+    except:
+        ah_update()
+        continue
 
-        y1 = y + 80
-        x1 = x
+    yayko_pos = pg.center(location)
+    pg.moveTo(yayko_pos)
+    x,y = pg.position()
 
-        x2 = x + 654
-        y2 = y - 80
+    y1 = y + 80
+    x1 = x
 
-        bbox = (x1, y1, x2, y2)
+    x2 = x + 654
+    y2 = y - 80
 
-        img = ImageGrab.grab(bbox=bbox)
+    bbox = (x1, y1, x2, y2)
 
-        if price(img) <= target_price:
-            #k.press(Key.shift)
-            keyboard.press('shift')
-            pg.click(yayko_pos)
-            break
+    img = ImageGrab.grab(bbox=bbox)
 
-    except: ah_update()
+    if price(img) <= target_price:
+        #k.press(Key.shift)
+        keyboard.press('shift')
+        pg.click(yayko_pos)
+        break
+
+
