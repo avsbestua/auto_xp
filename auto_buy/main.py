@@ -35,6 +35,8 @@ while True:
         location = pg.locateOnScreen("yayko.png", region=(636, 139, 1287, 517), confidence=0.85)
     except:
         ah_update()
+
+    if not location:
         continue
 
     yayko_pos = pg.center(location)
