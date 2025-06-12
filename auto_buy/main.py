@@ -9,9 +9,8 @@ def price(image):
 
     for line in red.splitlines():
         if "Цена" in line:
-            kuski = line.split("$")
 
-            kuski = line.split("Цена")
+            kuski = line.split()
 
             price = int(kuski[-1].strip().replace(',', ''))
 
