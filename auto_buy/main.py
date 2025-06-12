@@ -46,9 +46,8 @@ while True:
         bbox = (x1, y1, x2, y2)
 
         img = ImageGrab.grab(bbox=bbox)
-        img.save("ah.png")
 
-        if price("ah.png") <= target_price:
+        if price(img) <= target_price:
             #k.press(Key.shift)
             keyboard.press('shift')
             pg.click(yayko_pos)
